@@ -115,6 +115,9 @@ gradle-app.setting
 
 # End of https://www.gitignore.io/api/gradle,java-web,intellij
 
+### Custom
+.idea/compiler.xml
+
 ### Application.yml Files
 *.yml
 !application.yml
