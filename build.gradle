@@ -27,7 +27,7 @@ sourceCompatibility = 1.8
 dependencies {
 
 
-    // testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
     // implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     // compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.2.6.RELEASE'
 
@@ -47,24 +47,24 @@ dependencies {
 //     implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.2.6.RELEASE'
 
     // Dynamic Web
-    // implementation 'org.webjars:jquery:3.4.1'
-    // implementation 'org.webjars:bootstrap:4.3.1'
+    implementation 'org.webjars:jquery:3.4.1'
+    implementation 'org.webjars:bootstrap:4.3.1'
 
     // JSP
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
 
     // Lombok
-//    compileOnly 'org.projectlombok:lombok:1.18.12'
-//    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
     // Database
 //    runtimeOnly 'com.h2database:h2'
-    // runtimeOnly'mysql:mysql-connector-java'
+    runtimeOnly'mysql:mysql-connector-java'
 
     // Swagger
-//    implementation 'io.springfox:springfox-swagger2:2.6.1'
-//    implementation 'io.springfox:springfox-swagger-ui:2.6.1'
+    implementation 'io.springfox:springfox-swagger2:2.6.1'
+    implementation 'io.springfox:springfox-swagger-ui:2.6.1'
 
     // YAML
 //    implementation 'net.rakugakibox.util:yaml-resource-bundle:1.1'
