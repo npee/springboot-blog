@@ -11,11 +11,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/v2/api-docs", "/swagger-resources/**",
-                "/swagger-ui.html", "/webjars/**", "/swagger/**");
+                "/swagger-ui.html", "/webjars/**", "/swagger/**", "/favicon.ico");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/").permitAll().anyRequest().authenticated();
+        http
+                .httpBasic().disable()
+                .csrf().disable()
+                .authorizeRequests().antMatchers("/", "/*/user/**").permitAll().anyRequest().authenticated();
     }
 }
