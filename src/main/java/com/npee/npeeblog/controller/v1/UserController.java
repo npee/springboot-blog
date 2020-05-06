@@ -1,5 +1,6 @@
 package com.npee.npeeblog.controller.v1;
 
+import com.npee.npeeblog.advice.exception.CustomUserExistsException;
 import com.npee.npeeblog.model.config.CommonResult;
 import com.npee.npeeblog.model.entity.User;
 import com.npee.npeeblog.model.repository.UserJpaRepository;
@@ -35,12 +36,11 @@ public class UserController {
     @PostMapping("/user")
     public CommonResult createUser(
             @ApiParam(value = "회원 아이디", required = true) @RequestParam String email,
-            @ApiParam(value = "회원 비밀번호", required = true) @RequestParam String password) throws Exception {
+            @ApiParam(value = "회원 비밀번호", required = true) @RequestParam String password) {
 
         Optional<User> user = userJpaRepository.findByEmail(email);
         if (user.isPresent()) {
-            log.debug("! Exception !");
-            throw new Exception();
+            throw new CustomUserExistsException();
         }
 
         User newUser = userJpaRepository.save(User.builder()
