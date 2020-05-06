@@ -118,8 +118,10 @@ gradle-app.setting
 ### Custom
 .idea/compiler.xml
 
+## Resources
+
 ### Application.yml Files
-*.yml
+/src/main/resources/*.yml
 !application.yml
 
 # Default
@@ -136,3 +138,8 @@ gradle-app.setting
 
 # Test
 # application-test.yml
+
+### Exception Messages
+# !i18n/*
+#!exception_ko.yml
+#!exception_en.yml
