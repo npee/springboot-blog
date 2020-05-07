@@ -1,8 +1,8 @@
-package com.npee.npeeblog.model.service;
+package com.npee.npeeblog.model.response.service;
 
-import com.npee.npeeblog.model.config.CommonResult;
-import com.npee.npeeblog.model.config.ListResult;
-import com.npee.npeeblog.model.config.SingleResult;
+import com.npee.npeeblog.model.response.config.CommonResult;
+import com.npee.npeeblog.model.response.config.ListResult;
+import com.npee.npeeblog.model.response.config.SingleResult;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 

@@ -1,10 +1,10 @@
 package com.npee.npeeblog.controller.v1;
 
 import com.npee.npeeblog.advice.exception.CustomUserExistsException;
-import com.npee.npeeblog.model.config.CommonResult;
+import com.npee.npeeblog.model.response.config.CommonResult;
 import com.npee.npeeblog.model.entity.User;
 import com.npee.npeeblog.model.repository.UserJpaRepository;
-import com.npee.npeeblog.model.service.ResponseService;
+import com.npee.npeeblog.model.response.service.ResponseService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

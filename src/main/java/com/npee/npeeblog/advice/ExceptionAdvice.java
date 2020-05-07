@@ -1,8 +1,8 @@
 package com.npee.npeeblog.advice;
 
 import com.npee.npeeblog.advice.exception.CustomUserExistsException;
-import com.npee.npeeblog.model.config.CommonResult;
-import com.npee.npeeblog.model.service.ResponseService;
+import com.npee.npeeblog.model.response.config.CommonResult;
+import com.npee.npeeblog.model.response.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;

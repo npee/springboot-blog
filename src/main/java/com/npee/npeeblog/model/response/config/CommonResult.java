@@ -1,4 +1,4 @@
-package com.npee.npeeblog.model.config;
+package com.npee.npeeblog.model.response.config;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
