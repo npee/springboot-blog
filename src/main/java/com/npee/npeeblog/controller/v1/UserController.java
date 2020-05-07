@@ -1,6 +1,8 @@
 package com.npee.npeeblog.controller.v1;
 
 import com.npee.npeeblog.advice.exception.CustomUserExistsException;
+import com.npee.npeeblog.model.entity.Blog;
+import com.npee.npeeblog.model.repository.BlogJpaRepository;
 import com.npee.npeeblog.model.response.config.CommonResult;
 import com.npee.npeeblog.model.entity.User;
 import com.npee.npeeblog.model.repository.UserJpaRepository;
@@ -13,6 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Api(tags = {"1. User"})
@@ -23,6 +29,7 @@ import java.util.Optional;
 public class UserController {
 
     private final UserJpaRepository userJpaRepository;
+    private final BlogJpaRepository blogJpaRepository;
     private final PasswordEncoder passwordEncoder;
     private final ResponseService responseService;
 
@@ -43,11 +50,34 @@ public class UserController {
             throw new CustomUserExistsException();
         }
 
+        List list = new ArrayList();
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
+        String now = format.format(date);
+
+        // parsing
+        String[] splitEmail = email.split("@");
+        String nickname = splitEmail[0];
+
         User newUser = userJpaRepository.save(User.builder()
                 .email(email)
                 .password(passwordEncoder.encode(password))
+                //.nickname(email)
+                .nickname(nickname)
+                .registerDate(now)
                 .build());
 
-        return responseService.getSingleResult(newUser);
+        Blog newBlog = blogJpaRepository.save(Blog.builder()
+                .title(nickname + "의 블로그")
+                .image("default url")
+                .count(0L)
+                .registerDate(now)
+                .build());
+
+        list.add(newUser);
+        list.add(newBlog);
+
+        // return responseService.getSingleResult(newUser);
+        return responseService.getListResult(list);
     }
 }
