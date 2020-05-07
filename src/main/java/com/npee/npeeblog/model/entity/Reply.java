@@ -2,8 +2,7 @@ package com.npee.npeeblog.model.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Builder
@@ -15,7 +14,12 @@ import java.util.Date;
 @Table(name = "replies")
 public class Reply {
 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long replyNo;
+
+    @Column(nullable = false)
     private String reply;
-    private Date registerDate;
+
+    @Column(nullable = false)
+    private String registerDate;
 }

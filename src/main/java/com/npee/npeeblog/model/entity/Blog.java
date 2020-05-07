@@ -19,7 +19,7 @@ public class Blog {
 
     @Column(nullable = false, length = 50)
     private String title;
-    
+
     @Column
     private String image;
 
@@ -27,6 +27,6 @@ public class Blog {
     private Long count;
 
     @Column(nullable = false)
-    private Date registerDate;
+    private String registerDate;
 
 }

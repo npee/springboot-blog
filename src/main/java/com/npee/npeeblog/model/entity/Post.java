@@ -28,5 +28,5 @@ public class Post {
     private Long count;
 
     @Column(nullable = false)
-    private Date registerDate;
+    private String registerDate;
 }

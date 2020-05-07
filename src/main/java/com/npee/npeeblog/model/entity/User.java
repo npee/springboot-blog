@@ -30,5 +30,5 @@ public class User {
     private String nickname;
 
     @Column(nullable = false)
-    private Date registerDate;
+    private String registerDate;
 }
