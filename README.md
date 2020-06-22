@@ -1,11 +1,13 @@
-# springboot-blog
+# springboot-blog-ver2
 ## Summary
 ## Update
+### 2020.06.22
+* Initializing springboot-blog-ver2
 ### 2020.05.07
-Ignore JPA Database references unresolved error  
-Design Database
+* Ignore JPA Database references unresolved error  
+* Design Database
 ### 2020.05.06
-Design User Flow diagram
+* Design User Flow diagram
 
 ## Dev. Environment
 * Springboot 2.2.6 Release
@@ -15,7 +17,6 @@ Design User Flow diagram
 * JSP
 * AWS
     * EC2
-    * S3
 ## Function
 ### User
 #### Authentication
